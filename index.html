@@ -12,9 +12,17 @@
     <button id="mapBtn">World Map</button>
   </div>
 
+  <div class="zoom-controls" id="zoomControls">
+    <button id="zoomOut">−</button>
+    <span id="zoomLevel">1x</span>
+    <button id="zoomIn">+</button>
+  </div>
+
   <div class="content">
     <iframe id="pdfViewer" src="Rules and Information.pdf" frameborder="0"></iframe>
-    <img id="mapImage" src="map2d.png" alt="World Map" />
+    <div id="mapContainer">
+      <img id="mapImage" src="map2d.png" alt="World Map" />
+    </div>
   </div>
 
   <script src="script.js"></script>
