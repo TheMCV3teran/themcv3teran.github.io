@@ -32,33 +32,14 @@ button.active {
   color: white;
 }
 
-.zoom-controls {
-  display: none;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.zoom-controls button {
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  border-radius: 6px;
-}
-
-#zoomLevel {
-  font-weight: bold;
-  font-size: 18px;
-}
-
 .content {
   width: 90%;
   max-width: 1000px;
   height: 80vh;
   position: relative;
+  border-radius: 8px;
   overflow: hidden;
   background-color: #fff;
-  border-radius: 8px;
 }
 
 iframe {
@@ -71,13 +52,23 @@ iframe {
 #mapContainer {
   width: 100%;
   height: 100%;
-  overflow: scroll;
   display: none;
+  position: relative;
+  overflow: hidden; /* prevent image from exceeding the frame */
   background-color: #fff;
+  cursor: grab;
+}
+
+#mapContainer:active {
+  cursor: grabbing;
 }
 
 #mapImage {
-  image-rendering: pixelated;
+  position: absolute;
+  top: 0;
+  left: 0;
   transform-origin: top left;
-  display: block;
+  image-rendering: pixelated;
+  user-select: none;
+  pointer-events: none;
 }
